@@ -1,0 +1,28 @@
+<div style="text-align:center">
+  <h1>Simulator</h1>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <div class="container">
+      <h4>Hour</h4>
+      <p>{{simulator.hour}}</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="container">
+      <h4>Options</h4>
+      <p><button (click)="feed()">Feed Animals</button></p>
+    </div>
+  </div>
+</div>
+
+<div class="card-container" *ngFor="let animal of simulator.animals">
+  <div class="card">
+    <div class="container">
+      <h4>{{animal.name}}</h4>
+      <p>Health: {{(animal.health.value * 100) | number: '1.2-2'}}</p>
+      <p>Status: {{animal.health.status}}</p>
+    </div>
+  </div>
+</div>
